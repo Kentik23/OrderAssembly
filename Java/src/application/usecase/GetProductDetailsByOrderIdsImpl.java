@@ -40,8 +40,6 @@ public class GetProductDetailsByOrderIdsImpl implements GetProductDetailsByOrder
         for (OrderContents orderContents : orderContentsList) {
             int productId = orderContents.getProductId();
 
-            System.out.println(productId);
-
             String productName = products.stream().filter(x -> x.getId() == productId).map(Product::getName).findFirst().get();
             int orderId = orderContents.getOrderId();
             int count = orderContents.getCount();
